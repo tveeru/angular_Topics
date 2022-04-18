@@ -1,12 +1,19 @@
-<div *ngFor="let val of inpval">
-{{val}}
+<div *ngFor="let val of inpval;let i=index">
+<ul>
+  <li>
+    {{val}} <button (click)="delItem(i)"> Delete </button>
+
+  </li>
+</ul>
 </div>
 
-<div>
+
+
+<!-- <div>
   <label>
     ADD Food:
     <input type="text" #food (keyup.enter)="addToFood(food.value)"/>
 
   </label>
 
-</div>
+</div> -->

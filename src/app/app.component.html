@@ -1,6 +1,11 @@
 
 <input type="text" #val (keyup.enter)="addHero(val.value)" />
 
-<app-child [inpval]="items" (foodList)="getFood($event)"></app-child>
+<app-child [inpval]="items" (foodIndex)="getDeleteIndex($event)"></app-child>
 
-{{foodItemsList | json }}
+<hr/>
+
+<p *ngIf="deletedItem">
+  Deleted Items are: {{deletedItem}}
+</p>
+

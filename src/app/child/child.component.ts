@@ -9,13 +9,13 @@ export class ChildComponent {
 
   @Input()inpval: string[] = [];
 
-  @Output() foodList:EventEmitter<string>  = new EventEmitter<string>();
+  @Output() foodIndex:EventEmitter<number>  = new EventEmitter<number>();
 
 
-  addToFood(data:string){
-    this.foodList.emit(data);
+  delItem(i:number) {
+this.foodIndex.emit(i);
+}
 
-  }
 
 }
 

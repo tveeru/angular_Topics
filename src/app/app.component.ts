@@ -8,7 +8,7 @@ import { Addition } from './addition';
 })
 export class AppComponent {
   items:string[]=[];
-  foodItemsList:string[]=[];
+  deletedItem?:string;
 
 
   // addHero($event:any){
@@ -23,8 +23,13 @@ export class AppComponent {
     this.items.push(data);
   }
 
-  getFood(food:any){
-    this.foodItemsList.push(food);
 
+
+  getDeleteIndex(data:number){
+    this.deletedItem = this.items[data];
+    //this.items.splice(data,1);
+    this.items = this.items.filter((ele,index) => index != data);
+
+   // this.items = this.items.filter((ele,index) =>  index != data) //spicing the element
   }
 }
