@@ -7,14 +7,6 @@ import { Component, Input, OnInit, AfterViewInit, Output, EventEmitter, ViewChil
 })
 export class ChildComponent {
 
-  @Input()inpval: string[] = [];
-
-  @Output() foodIndex:EventEmitter<number>  = new EventEmitter<number>();
-
-
-  delItem(i:number) {
-this.foodIndex.emit(i);
-}
 
 
 }
