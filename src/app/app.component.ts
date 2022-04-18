@@ -1,5 +1,5 @@
-import { Component,ViewChild, ElementRef } from '@angular/core';
-import { Addition } from './addition';
+import { Component } from '@angular/core';
+import { Product } from './product';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +7,39 @@ import { Addition } from './addition';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items:string[]=[];
-  deletedItem?:string;
 
+  products: Product[] = [
+    {
+      name: "Laptop", qty:5, price: 4200
+    },
+    {
+      name: "Keyboard", qty:15, price: 2400
+    },
+    {
+      name: "iphone", qty:5, price: 12400
+    },
+    {
+      name: "Samsung Max3", qty:25, price: 20400
+    },
+    {
+      name: "mouse", qty:5, price: 2400
+    },
+  ]
+  cartBucket:Product[]=[];
+  updateEvnt(payload:any){
+    if(payload.addedToCart){
+      this.cartBucket.push(payload.product);
+    }else{
+      console.log(payload.product);
+      this.cartBucket = this.cartBucket.filter(ele => ele != payload.product);
 
-  // addHero($event:any){
-  //   console.log($event.target.value);
-  //   const value = $event.target.value;
-  //   this.items.push(value);
-
-  // }
-
-  addHero(data:any){
-    console.log(data);
-    this.items.push(data);
+    }
   }
-
-
-
-  getDeleteIndex(data:number){
-    this.deletedItem = this.items[data];
-    //this.items.splice(data,1);
-    this.items = this.items.filter((ele,index) => index != data);
-
-   // this.items = this.items.filter((ele,index) =>  index != data) //spicing the element
+  totalCartAmount(){
+    let total:number = 0;
+    this.cartBucket.forEach((ele) => {
+      total = total + ele.qty * ele.price
+    });
+    return total;
   }
 }
