@@ -1,0 +1,12 @@
+<div *ngFor="let val of inpval">
+{{val}}
+</div>
+
+<div>
+  <label>
+    ADD Food:
+    <input type="text" #food (keyup.enter)="addToFood(food.value)"/>
+
+  </label>
+
+</div>
