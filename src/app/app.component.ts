@@ -7,5 +7,11 @@ import { Addition } from './addition';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  data:number = 1;
+  addQty(val:any){
+    this.data = val;
+  }
+  showData(event:any){
+    this.data = event;
+  }
 }

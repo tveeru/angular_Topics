@@ -1,1 +1,19 @@
-Main Component
+<h1>
+  ADD Quantity
+
+</h1>
+<div>
+  <input type="text" #qty/>
+</div>
+<p>
+  <button (click)="addQty(qty.value)">ADD Qty</button>
+</p>
+<p>
+  <strong>The Quantity is {{data}}</strong>
+</p>
+<app-product [(qty)]="data" (qtyChange)="showData($event)"></app-product>
+<!-- <app-product [(qty)]="data"></app-product>
+
+  Name should be
+                ***** qty and qtyChange in Product.component.ts
+-->
