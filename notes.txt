@@ -1,0 +1,3 @@
+Ng Template:
+
+The <ng-template> is an angular

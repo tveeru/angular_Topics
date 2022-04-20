@@ -1,13 +1,7 @@
-<div>
-  <p> Purchase Store </p>
-</div>
-<div *ngFor="let itm of cartBucket">
-  <strong>
-    Name: {{itm.name}}
-  </strong>
-</div>
+<!-- Starts - Basic Example -->
 
-<p>
-  <strong>Total Price {{totalCartAmount()}}</strong>
-</p>
-<app-product *ngFor="let item of products" [pData]="item" (updateCartEvent)="updateEvnt($event)"></app-product>
+<h2> Defining a template </h2>
+
+<ng-template>
+  This is inside ng template
+</ng-template>
