@@ -1,1 +1,37 @@
-Main Component
+ <!-- <ng-template #brand let-data let-name let-sz="size"> -->
+<ng-template #brand let-data let-n="name" let-sz="size">
+  <section class="brand">
+    <img src="https://picsum.photos/{{sz}}" alt="">
+    <h3> {{n}} </h3>
+  </section>
+</ng-template>
+<header>
+
+    <ng-container *ngTemplateOutlet="brand; context { name: 'veer', size: 300}">
+
+    </ng-container>
+</header>
+
+<section>
+  <!-- <h3> This is Middle Content  </h3>
+  <ng-container *ngTemplateOutlet="brand; context { $implicit: 'thondam', size: 700}"></ng-container>
+ -->
+</section>
+
+<footer style="text-align: center;">
+  <h3> This is Footer Text </h3>
+  <ng-container *ngTemplateOutlet="brand;   "></ng-container>
+
+</footer>
+
+<!--------------------Example 2 ------------------------->
+
+<ng-template let-value="value" #messageTemplate>
+  <p> Value is recieved from the parent is {{value}}</p>
+
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="messageTemplate"
+  [ngTemplateOutletContext]="{value:'10000'}">
+
+</ng-container>
