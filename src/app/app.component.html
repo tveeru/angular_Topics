@@ -5,3 +5,16 @@
 <ng-template>
   This is inside ng template
 </ng-template>
+
+<!-- we can render angular, there are few ways we can display the  template
+ 1) ngTemplateOutlet
+ 2) TemplateRef and viewContainerRef
+ -->
+<!-- NgTemplateOutlet - is a structural directive -->
+<ng-template #sayHello>
+  Hello this the template
+</ng-template>
+
+<ng-container  *ngTemplateOutlet="sayHello">
+  It is container content....
+</ng-container>
