@@ -1,5 +1,4 @@
-import { Component,ViewChild, ElementRef } from '@angular/core';
-import { Addition } from './addition';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +6,6 @@ import { Addition } from './addition';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items:string[]=[];
-  deletedItem?:string;
 
-
-  // addHero($event:any){
-  //   console.log($event.target.value);
-  //   const value = $event.target.value;
-  //   this.items.push(value);
-
-  // }
-
-  addHero(data:any){
-    console.log(data);
-    this.items.push(data);
-  }
-
-
-
-  getDeleteIndex(data:number){
-    this.deletedItem = this.items[data];
-    //this.items.splice(data,1);
-    this.items = this.items.filter((ele,index) => index != data);
-
-   // this.items = this.items.filter((ele,index) =>  index != data) //spicing the element
   }
 }
