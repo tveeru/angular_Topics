@@ -1,0 +1,65 @@
+<div *ngIf="!isLoggedIn;then thenPart; else elseBlock"></div>
+
+<ng-template #elseBlock>
+  else Block will work Here....
+</ng-template>
+<ng-template #thenPart>
+  <p>
+    This is true part - if logged is true, it will work....
+  </p>
+
+</ng-template>
+<!--- Above Div Template will converted into below -->
+<ng-template [ngIf]="isLoggedIn" [ngIfElse]="logout" [ngIfThen]="login"></ng-template>
+
+<ng-template #login>
+  <p>
+    This is Login Page, yeah you got Logged In
+  </p>
+</ng-template>
+
+
+<ng-template #logout>
+  <p>
+    This is Logot Page,See you again...
+  </p>
+</ng-template>
+
+<!------------ngFor--------------------------------------------------------->
+
+<ng-template ngFor let-name let-i="index" [ngForOf]="names">
+  <div>
+     {{i+1}} {{name}}
+  </div>
+</ng-template>
+
+<!-----ngSwitch-------->
+<!-- <input type="text" [(ngModel)]="food"/>
+
+<div *ngSwitch="food">
+  <p>
+     *ngSwitchCase="'chicken'">Chicken
+  </p>
+  <p>
+    *ngSwitchCase="'rolls'">rolls
+ </p>
+ <p>
+  *ngSwitchCase="'mutton'">Mutton
+</p>
+<p *ngSwitchDefault>This is Default</p>
+
+</div> -->
+
+<!-------Using Ng Template -------->
+<div [ngSwitch]="food">
+  <ng-template [ngSwitchCase]="'chicken'">
+    Chicken
+  </ng-template>
+  <ng-template [ngSwitchCase]="'rolls'">
+    Rolls
+  </ng-template>
+  <ng-template [ngSwitchCase]="'mutton'">
+  Mutton
+  </ng-template>
+
+</div>
