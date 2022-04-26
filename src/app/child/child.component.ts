@@ -1,21 +1,23 @@
-import { Component, Input, OnInit, AfterViewInit, Output, EventEmitter, ViewChild,ElementRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent {
+export class ChildComponent implements OnInit {
 
-  @Input()inpval: string[] = [];
+  constructor() { }
+  @Input() allP:any;
+  @Input() trend: any;
+  @Output() pid = new EventEmitter();
 
-  @Output() foodIndex:EventEmitter<number>  = new EventEmitter<number>();
 
+  passData(id:any){
+    this.pid.emit(id);
+  }
 
-  delItem(i:number) {
-this.foodIndex.emit(i);
+  ngOnInit() {
+  }
+
 }
-
-
-}
-

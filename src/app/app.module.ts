@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
       ChildComponent
    ],

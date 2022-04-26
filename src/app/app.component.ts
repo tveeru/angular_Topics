@@ -1,5 +1,4 @@
-import { Component,ViewChild, ElementRef } from '@angular/core';
-import { Addition } from './addition';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +6,34 @@ import { Addition } from './addition';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items:string[]=[];
-  deletedItem?:string;
+
+  allProducts: any = [
+    {
+      id:1,name:'Laptop', price:30000
+    },
+    {
+      id:2,name:'mouse', price:300
+    },
+    {
+      id:3,name:'Keyboard', price:400
+    }
+  ]
+
+  TopsellingProducts: any = [
+    {
+      id:1,name:'Samsung AC', price:300000
+    },
+    {
+      id:2,name:'Iphone15', price:30000
+    },
+    {
+      id:3,name:'LG Refrigilator', price:40000
+    }
+  ]
 
 
-  // addHero($event:any){
-  //   console.log($event.target.value);
-  //   const value = $event.target.value;
-  //   this.items.push(value);
+  showId($event:any){
+    console.log($event);
 
-  // }
-
-  addHero(data:any){
-    console.log(data);
-    this.items.push(data);
-  }
-
-
-
-  getDeleteIndex(data:number){
-    this.deletedItem = this.items[data];
-    //this.items.splice(data,1);
-    this.items = this.items.filter((ele,index) => index != data);
-
-   // this.items = this.items.filter((ele,index) =>  index != data) //spicing the element
   }
 }

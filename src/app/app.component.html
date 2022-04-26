@@ -1,11 +1,18 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <app-child (pid)="showId($event)" [allP]="allProducts">
+         <h1 class="header"> Latest Products are: </h1>
+         <h6 class="footer">For More Details click here</h6>
+      </app-child>
+    </div>
+    <div class="col-md-6">
+      <app-child [allP]="TopsellingProducts">
+        <h1 class="header"> Top Selling Products are : </h1>
+        <h6 class="footer"> See more</h6>
+      </app-child>
+    </div>
+</div>
 
-<input type="text" #val (keyup.enter)="addHero(val.value)" />
 
-<app-child [inpval]="items" (foodIndex)="getDeleteIndex($event)"></app-child>
-
-<hr/>
-
-<p *ngIf="deletedItem">
-  Deleted Items are: {{deletedItem}}
-</p>
 
