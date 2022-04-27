@@ -1,0 +1,23 @@
+<h4>Main Component</h4>
+<p>
+  Message: <input type="text" [(ngModel)]="message">
+</p>
+
+<p> ------------------------------------------------------- </p>
+<h5> Orders </h5>
+
+  <form>
+    <p>
+      <input type="text" name="id" placeholder="id" [(ngModel)]="order_id">
+    </p>
+    <p>
+      <input type="text" name="name" placeholder="name" [(ngModel)]="order_name">
+    </p>
+    <p>
+      <input type="number" name="orderType" placeholder="orderType" [(ngModel)]="order_type">
+    </p>
+    <p><button (click)="updateOrdes()">Update Order</button>
+  </form>
+
+<p><button (click)="updateCustomer()">Update </button>
+<app-ngOnchanges [orderDetails]="order" ></app-ngOnchanges>
