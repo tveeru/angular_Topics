@@ -1,11 +1,9 @@
-
-<input type="text" #val (keyup.enter)="addHero(val.value)" />
-
-<app-child [inpval]="items" (foodIndex)="getDeleteIndex($event)"></app-child>
-
-<hr/>
-
-<p *ngIf="deletedItem">
-  Deleted Items are: {{deletedItem}}
-</p>
-
+<h3> We can achieve the following things -->
+  <br/>
+  1) Acessing template of same Component <br/>
+  2) Accessing the template of child Component
+</h3>
+<div>
+  @viewChild decorator provides us with a easy and simple way to access and manipulate the properties and methods of a child component from a container or root component.
+</div>
+<app-child></app-child>
