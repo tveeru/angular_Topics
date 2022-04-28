@@ -1,4 +1,4 @@
-<h3> We can achieve the following things -->
+<h3> We can achieve the following things
   <br/>
   1) Acessing template of same Component <br/>
   2) Accessing the template of child Component
@@ -6,4 +6,25 @@
 <div>
   @viewChild decorator provides us with a easy and simple way to access and manipulate the properties and methods of a child component from a container or root component.
 </div>
+
+<div>
+  <!-- accessing with in the same component using template refrence variable -->
+  <div #para>
+  </div>
+
+</div>
+<p>
+
+</p>
+<p>
+<!-- Example 2 accessing child component-->
+<div>
+   <button (click)="Increment()">
+    Increment
+  </button> &nbsp; {{child?.count}} &nbsp;
+  <button (click)="decrement()">
+    Increment
+  </button>
+</div>
 <app-child></app-child>
+<app-child1 #myCalendar></app-child1>

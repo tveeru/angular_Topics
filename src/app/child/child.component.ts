@@ -8,7 +8,15 @@ import { Component, Input, OnInit, AfterViewInit, Output, EventEmitter, ViewChil
 export class ChildComponent {
 
 
+count:number = 1;
 
+increment(){
+  this.count++;
+}
+decrement(){
+  this.count--;
+
+}
 
 }
 
