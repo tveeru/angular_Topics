@@ -1,0 +1,17 @@
+
+        <h1> On push Strategy</h1>
+        <p>
+          <label for="firstname">
+            FirstName
+          </label>
+          <input type="text" [(ngModel)]="Profile!.first">
+        </p>
+        <p>
+          <label for="lastname">
+            LastName
+          </label>
+          <input type="text" [(ngModel)]="Profile!.last">
+        </p>
+        <p>
+          {{Profile?.lastChanged() | date:'medium'}}
+        </p>
