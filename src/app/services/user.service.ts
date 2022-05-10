@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams,HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 import { environment } from 'src/environments/environment';
@@ -12,13 +12,13 @@ export class UserService {
 
   constructor(private _http: HttpClient) {  }
 
-  getUsers():Observable<User[]>{
-   let myHeaders = new HttpHeaders({'myHeader':['headervalue','header21']});
-   let myparams = new HttpParams().set('page', '5').set('sort', true);
+  getUsers():Observable<HttpEvent<User[]>>{
+  //  let myHeaders = new HttpHeaders({'myHeader':['headervalue','header21']});
+  //  let myparams = new HttpParams().set('page', '5').set('sort', true);
    //let myHeaders = new HttpHeaders({'myHeader':'headervalue'});
-   myHeaders = myHeaders.set("g1","j");
-   myHeaders = myHeaders.append("g1", '2000');
-  return this._http.get<User[]>(`${this.apiUrl}/users`, { headers: myHeaders, params: myparams});
+  //  myHeaders = myHeaders.set("g1","j");
+  //  myHeaders = myHeaders.append("g1", '2000');
+  return this._http.get<User[]>(`${this.apiUrl}/users`, {observe: 'events', reportProgress: true});
 
   }
 

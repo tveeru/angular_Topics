@@ -54,11 +54,11 @@ export class AppComponent  implements OnInit{
    // this.onCreateUser();
   // this.deleteUser();
   }
-  loadUsers(): void {
+  loadUsers() {
      this.UsrService.getUsers().subscribe(
-      {
-         next: (response: User[]) => {
-        console.log('Fetching the data' , response);
+    {
+         next: (events) => {
+        console.log(events);
        },
         complete: () => {
           console.log('Done');
