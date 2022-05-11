@@ -1,0 +1,28 @@
+<p>
+  productDetails works! - {{product?.title}}
+</p>
+
+<p>
+  {{product?.name }}
+</p>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{product?.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{product?.category}}</h6>
+    <p class="card-text">
+      {{product?.description}}
+    </p>
+    <a class="card-link">{{product?.price}}</a>
+
+    <button (click)="viewNextProduct()">Next Product</button>
+
+   <p>
+    <a [routerLink]="['wishlist']"> Wishlists </a> &nbsp;
+    <a> Add Cart </a>
+   </p>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>

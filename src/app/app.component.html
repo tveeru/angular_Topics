@@ -1,11 +1,5 @@
+<app-navBar></app-navBar>
 
-<input type="text" #val (keyup.enter)="addHero(val.value)" />
+<router-outlet></router-outlet>
 
-<app-child [inpval]="items" (foodIndex)="getDeleteIndex($event)"></app-child>
-
-<hr/>
-
-<p *ngIf="deletedItem">
-  Deleted Items are: {{deletedItem}}
-</p>
 

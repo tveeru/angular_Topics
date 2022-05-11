@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 col-md-4" *ngFor="let item of products">
+      <a [routerLink]="['/product',item.id]">
+     <div class="card" style="width: 18rem;" >
+       <img src="{{item.image}}" class="card-img-top" alt="...">
+       <div class="card-body">
+        <p>
+          {{item.title}}
+        </p>
+        <p>
+          Price: {{item.price}}
+        </p>
+       </div>
+     </div>
+    </a>
+   </div>
+</div>
+</div>
+
+
