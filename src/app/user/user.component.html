@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-9">
+
+      <div class="card" [ngStyle]="{'margin-top':'70px'}">
+        <div class="card-body">
+          <div class="row">
+          <div class="col-md-6">
+            <img [ngStyle]="{'height':'200px','width':'200px'}" src="https://i.pinimg.com/originals/d5/b0/4c/d5b04cc3dcd8c17702549ebc5f1acf1a.png"/>
+          </div>
+          <div class="col-md-6">
+              <p *ngIf="!editMode">
+                {{_user?.website}}
+              </p>
+              <p>
+                <input *ngIf="editMode" type="text" [(ngModel)]="_user.website"/>
+              </p>
+
+
+            <div>
+              <p>
+                UserId: {{_user?.id}}
+              </p>
+              <p>
+                UserName: {{_user?.name}}
+              </p>
+              <p>
+                Email: {{_user?.email}}
+              </p>
+              <p>
+                Phone: {{_user?.phone}}
+              </p>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-12">
+            <div [ngStyle]="{'float':'right'}">
+              <button (click)="viewNextUser()" [ngStyle]="{'cursor':'pointer','background-color':'blue', 'text-align':'center', 'color':'white'}">
+                Next
+             </button>
+             &nbsp;&nbsp;
+             <!-- this is one way -->
+             <!-- <button [routerLink]="['/user', _user?.id]" [queryParams]="{edit:true}" [ngStyle]="{'cursor':'pointer','background-color':'orange', 'text-align':'center', 'color':'white'}"> -->
+              <button (click)="passParam()">
+              Edit
+            </button>&nbsp;
+            <button (click)="update()">
+              Update
+              </button>&nbsp;
+            <button [routerLink]="['/users']" [ngStyle]="{'cursor':'pointer','background-color':'red', 'text-align':'center', 'color':'white'}">
+              Back
+           </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

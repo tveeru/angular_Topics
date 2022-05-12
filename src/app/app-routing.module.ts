@@ -7,6 +7,9 @@ import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 import { ProductDetailsComponent } from './productDetails/productDetails.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { AddtoCartComponent } from './addtoCart/addtoCart.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './user/user.component';
+
 
 const routes: Routes = [
   {
@@ -21,6 +24,11 @@ const routes: Routes = [
      { path: 'cart', component: AddtoCartComponent},
 
    ]
+  },
+  {
+    path: 'users', component: UsersComponent
+  },{
+    path: 'user/:id', component: UserComponent
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'

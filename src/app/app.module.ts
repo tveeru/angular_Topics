@@ -14,9 +14,11 @@ import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 import { ProductDetailsComponent } from './productDetails/productDetails.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { AddtoCartComponent } from './addtoCart/addtoCart.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [					
     AppComponent,
     NavBarComponent,
     ProductsComponent,
@@ -24,7 +26,9 @@ import { AddtoCartComponent } from './addtoCart/addtoCart.component';
     PageNotFoundComponent,
       ProductDetailsComponent,
       WishlistComponent,
-      AddtoCartComponent
+      AddtoCartComponent,
+      UsersComponent,
+      UserComponent
    ],
   imports: [
     BrowserModule,
