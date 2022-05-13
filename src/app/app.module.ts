@@ -16,9 +16,13 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { AddtoCartComponent } from './addtoCart/addtoCart.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { UserGuardService } from './service/user-guard.service';
+import { AuthService } from './service/auth.service';
+import { ContactComponent } from './contact/contact.component';
+import { CandeactivateService } from './service/candeactivate.service';
 
 @NgModule({
-  declarations: [					
+  declarations: [
     AppComponent,
     NavBarComponent,
     ProductsComponent,
@@ -28,7 +32,8 @@ import { UserComponent } from './user/user.component';
       WishlistComponent,
       AddtoCartComponent,
       UsersComponent,
-      UserComponent
+      UserComponent,
+      ContactComponent
    ],
   imports: [
     BrowserModule,
@@ -36,7 +41,7 @@ import { UserComponent } from './user/user.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, UserGuardService,AuthService,CandeactivateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { AddtoCartComponent } from './addtoCart/addtoCart.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { UserGuardService } from './service/user-guard.service';
+import { ContactComponent } from './contact/contact.component';
+import { CandeactivateService } from './service/candeactivate.service';
 
 
 const routes: Routes = [
@@ -18,7 +21,7 @@ const routes: Routes = [
     path: 'products', component: ProductsComponent,
   },
    {
-   path: 'product/:id', component: ProductDetailsComponent,
+   path: 'product/:id', component: ProductDetailsComponent, canActivate:[UserGuardService], canActivateChild: [UserGuardService],
    children: [
      { path: 'wishlist', component: WishlistComponent},
      { path: 'cart', component: AddtoCartComponent},
@@ -26,9 +29,12 @@ const routes: Routes = [
    ]
   },
   {
-    path: 'users', component: UsersComponent
+    path: 'users', component: UsersComponent,canActivate:[UserGuardService]
   },{
     path: 'user/:id', component: UserComponent
+  },
+  {
+    path: 'contact', component: ContactComponent, canDeactivate: [CandeactivateService]
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
