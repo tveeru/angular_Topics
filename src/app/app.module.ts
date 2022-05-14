@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +23,7 @@ import { UserGuardService } from './service/user-guard.service';
 import { AuthService } from './service/auth.service';
 import { ContactComponent } from './contact/contact.component';
 import { CandeactivateService } from './service/candeactivate.service';
+import { ProductResolveGaurdService } from './service/product-resolve-gaurd.service';
 
 @NgModule({
   declarations: [
@@ -39,9 +43,12 @@ import { CandeactivateService } from './service/candeactivate.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
-  providers: [ProductService, UserGuardService,AuthService,CandeactivateService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [ProductService, UserGuardService,AuthService,CandeactivateService,ProductResolveGaurdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

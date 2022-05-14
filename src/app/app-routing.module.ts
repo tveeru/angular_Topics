@@ -12,13 +12,14 @@ import { UserComponent } from './user/user.component';
 import { UserGuardService } from './service/user-guard.service';
 import { ContactComponent } from './contact/contact.component';
 import { CandeactivateService } from './service/candeactivate.service';
+import { ProductResolveGaurdService } from './service/product-resolve-gaurd.service';
 
 
 const routes: Routes = [
   {
     path: 'home', component:HomeComponent
   },{
-    path: 'products', component: ProductsComponent,
+    path: 'products', component: ProductsComponent, resolve: { productz:ProductResolveGaurdService}
   },
    {
    path: 'product/:id', component: ProductDetailsComponent, canActivate:[UserGuardService], canActivateChild: [UserGuardService],
@@ -44,7 +45,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{enableTracing: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
