@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { OperatorsComponent } from './operators/operators.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-     ],
+  declarations: [	
+    AppComponent,
+      OperatorsComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
