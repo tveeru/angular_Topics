@@ -20,7 +20,7 @@
         </div>
 
 
-        <button>Submit</button>
+        <button> {{editMode ? "Edit": "ADD"}} Products</button>
       </form>
 
     </div>
@@ -33,20 +33,36 @@
             <th scope="col">Paid</th>
             <th scope="col">Name</th>
             <th scope="col">Balance</th>
+            <th scope="col">&nbsp;</th>
           </tr>
         </thead>
         <tbody>
            <!-- {{details | json}} -->
-          <tr *ngFor="let item of details">
-            <th scope="row">1</th>
-            <td>{{item.id}}</td>
+           <tr colspan="5" *ngIf="details.length < 1 && !loading">
+            <td>
+              No Items avialable
+            </td>
+          </tr>
+          <tr colspan="5" *ngIf="loading">
+            <td>
+              Loading...
+            </td>
+
+          </tr>
+          <tr *ngFor="let item of details; index as i">
+            <th scope="row">{{ i + 1}}</th>
+            <td> {{item.userId}} </td>
+            <td>{{item.paid}}</td>
             <td>{{item.name}}</td>
-            <td> {{item.age}}</td>
-            <td> {{item.userId}}</td>
+            <td> {{item.balance}}</td>
+            <td><button (click)="onDeleteData(item.id)">Delete</button> &nbsp; <button (click)="onEditData(item.id)">Edit</button></td>
+
           </tr>
 
         </tbody>
       </table>
+      <button (click)="onDeleteAll()">Delete All</button>
+
     </div>
   </div>
 

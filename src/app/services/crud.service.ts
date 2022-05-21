@@ -62,4 +62,14 @@ fetDetail(): Observable<Dummy[]>{
 
 }
 
+deleteData(id: string): Observable<User>{
+  return this._Http.delete<User>('https://authangular-2f1b7-default-rtdb.firebaseio.com/user/'+ id +'.json');
+}
+
+deleteAllData(): Observable<unknown>{
+  return this._Http.delete<unknown>('https://authangular-2f1b7-default-rtdb.firebaseio.com/user.json');
+}
+editData(id:any, data:User): Observable<User>{
+  return this._Http.put<User>('https://authangular-2f1b7-default-rtdb.firebaseio.com/user/' + id +'.json',data); ///user/-N2aFHnWUhvTzzz5ccgl
+}
 }
