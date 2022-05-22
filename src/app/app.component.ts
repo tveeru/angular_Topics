@@ -15,7 +15,12 @@ export class AppComponent implements OnInit{
 ngOnInit(): void {
 this.employeeForm = new FormGroup({
   name: new FormControl(),
-  email: new FormControl()
+  email: new FormControl(),
+  skill: new FormGroup({
+    skillName: new FormControl(),
+    experience: new FormControl(),
+    Proficiency: new FormControl()
+  })
 })
 }
 

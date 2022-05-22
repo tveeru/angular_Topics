@@ -28,6 +28,14 @@
           <span class="input-group-text" id="basic-addon2">@example.com</span>
         </div>
 
+        <div formGroupName="skill">
+          <input type="text" formControlName="skillName" placeholder="skill Name" /> &nbsp;
+          <input type="text" formControlName="experience" placeholder="Experience" /><br/>
+          <input id="Proficiency" type="radio" value="beginner" formControlName="Proficiency"/>&nbsp;Beginner
+          <input id="Proficiency" type="radio" value="Intermediate" formControlName="Proficiency"/>&nbsp;Intermediate
+          <input id="Proficiency" type="radio" value="Expert" formControlName="Proficiency"/>&nbsp;Expert
+
+        </div>
         <button>submit</button>
       </form>
 
