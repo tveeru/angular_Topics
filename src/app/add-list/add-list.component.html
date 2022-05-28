@@ -1,0 +1,40 @@
+<div class="container h-100 d-flex justify-content-center">
+  <div class="jumbotron my-auto shadow-s">
+    <div class="card" [ngStyle]="{'padding':'10px'}">
+      <form [formGroup]="productsForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+              <input type="text" formControlName="pname" class="form-control" placeholder="Product Name">
+            </div>
+            <div class="col-md-6">
+              <select formControlName="ram" class="form-select" aria-label="Default select example">
+                <option selected>Select RAM</option>
+                <option value="8">8 GB</option>
+                <option value="16">16 GB</option>
+                <option value="64">64 GB</option>
+                <option value="128">128 GB</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <input formControlName="camera" type="text" class="form-control" placeholder="Camera">
+            </div>
+            <div class="col-md-6">
+              <input formControlName="battery" type="text" class="form-control" placeholder="Battery">
+            </div>
+            <div class="col-md-12">
+                <input formControlName="images" (change)="storeData($event)" multiple class="form-control form-control-lg" id="formFileLg" type="file">
+
+            </div>
+          <div class="col-md-3" [ngStyle]="{'margin':'10px'}">
+            <button class="btn btn-success">Submit</button>
+          </div>
+          </div>
+      </div>
+
+    </form>
+
+
+    </div>
+      </div>
+  </div>
