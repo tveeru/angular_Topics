@@ -5,10 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ConfirmDirective } from './attribute/confirm.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConfirmDirective
      ],
   imports: [
     BrowserModule,

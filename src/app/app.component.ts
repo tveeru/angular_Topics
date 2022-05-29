@@ -7,4 +7,7 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
 
+  visitRange(){
+    location.href = "https://angular-training-guide.rangle.io/advanced-angular/directives/creating_an_attribute_directive";
+  }
 }
