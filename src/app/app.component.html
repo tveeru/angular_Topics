@@ -1,1 +1,21 @@
-<button [appConfirm]="visitRange" confirmMessage="visit Ro"> Visit Range</button>
+<!-- <button [appConfirm]="visitRange" confirmMessage="visit Ro"> Visit Range</button>
+
+<div appHighlight>
+  This is invalid
+</div>
+<hr/>
+<div #tmpl>
+  Hello
+</div> -->
+
+<!-- <ng-template *appHideAfter>
+  This is the structrual Directive
+</ng-template> -->
+
+<section *appHideAfter="5000 then placeholder">
+  This is the structrual Directive
+</section>
+
+<ng-template #placeholder>
+  This is the placeholder after 5000 seconds
+</ng-template>
