@@ -6,10 +6,12 @@ import {  HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CrudService } from './services/crud.service';
+import { FilterDataPipe } from './pipes/filter-data.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilterDataPipe
      ],
   imports: [
     BrowserModule,

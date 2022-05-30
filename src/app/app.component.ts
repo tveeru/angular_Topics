@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   loading: boolean = false;
   editMode: boolean = false;
   currentProductId!: string;
+  searchValue: any = "";
   //documents$: BehaviorSubject<any> = new BehaviorSubject(undefined);
 
 
@@ -96,5 +97,9 @@ export class AppComponent implements OnInit {
     this.crud.deleteAllData().subscribe(() => this.getDocuments());
   }
 
+  addNewData(index:number, item: any){
+    return item.userId;
+
+  }
 }
 
