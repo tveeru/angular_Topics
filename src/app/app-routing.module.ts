@@ -5,7 +5,10 @@ const routes: Routes = [
           {
             path: 'customers',
             loadChildren: () => import('./customers/customers.module')
-            .then(m => m.CustomersModule) }
+            .then(m => m.CustomersModule) },{
+              path: 'cart',
+              loadChildren: () => import('./cart/cart.module').then(m => m.CartModule)
+            }
           ];
 
 @NgModule({
