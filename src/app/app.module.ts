@@ -6,11 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OperatorsComponent } from './operators/operators.component';
+import { TeardownCleanObservableComponent } from './teardown-clean-observable/teardown-clean-observable.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
-      OperatorsComponent
+      OperatorsComponent,
+      TeardownCleanObservableComponent
    ],
   imports: [
     BrowserModule,
