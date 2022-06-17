@@ -18,9 +18,9 @@
 
 -->
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <div class="row align-items-center">
+    <div class="col-lg-6">
+      <form  ngClass="form-align" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">@</span>
           <input type="text"  formControlName="name" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
