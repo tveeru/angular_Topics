@@ -27,4 +27,30 @@ this.employeeForm = new FormGroup({
 onSubmit(){
   console.log(this.employeeForm.value);
 }
+
+/* Setting values to the form */
+onLoadData(){
+  /* Set the values */
+  this.employeeForm.setValue({
+    name: "veeranajaneyulu",
+    email: "veer@gmail.com",
+    skill: {
+      skillName: "Angular",
+      experience: 4,
+      Proficiency:'Intermediate'
+    }
+  })
+
+  /* Patch the values */
+  this.employeeForm.patchValue({
+    name: "thondamalla",
+    email: "veerth@gmail.com",
+    // skill: {
+    //   skillName: "Angular",
+    //   experience: 4,
+    //   Proficiency:'Intermediate'
+    // }
+  })
+
+}
 }
