@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 /* Importing FormGroup and FormControl from angular/forms */
 
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +12,29 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class AppComponent implements OnInit{
   employeeForm!: FormGroup;
 
+  constructor(private _fb:FormBuilder){}
+
 ngOnInit(): void {
-this.employeeForm = new FormGroup({
-  name: new FormControl(),
-  email: new FormControl(),
-  skill: new FormGroup({
-    skillName: new FormControl(),
-    experience: new FormControl(),
-    Proficiency: new FormControl()
+  /* normal way */
+// this.employeeForm = new FormGroup({
+//   name: new FormControl(),
+//   email: new FormControl(),
+//   skill: new FormGroup({
+//     skillName: new FormControl(),
+//     experience: new FormControl(),
+//     Proficiency: new FormControl()
+//   })
+// })
+
+/*using formbuilder */
+this.employeeForm = this._fb.group({
+  name: ['', Validators.required],
+  email: [''],
+  skill: this._fb.group({
+    skillName: [''],
+    experience: [''],
+    Proficiency: ['']
+
   })
 })
 }
