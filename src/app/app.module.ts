@@ -5,10 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormGroupNormalComponent } from './formGroup-normal/formGroup-normal.component';
+import { FormBuilderComponent } from './formBuilder/formBuilder.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [		
+    AppComponent,
+      FormGroupNormalComponent,
+      FormBuilderComponent
    ],
   imports: [
     BrowserModule,

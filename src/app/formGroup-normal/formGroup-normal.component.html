@@ -1,0 +1,86 @@
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 mb-5">
+          <form [formGroup]="empForm" (ngSubmit)="getDetails()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1">
+
+              <span class="text-danger" *ngIf="empForm.get('email')?.touched && empForm.get('email')?.hasError('required')">
+                *Email is required
+              </span>
+              <span class="text-danger" *ngIf="empForm.get('email')?.touched && empForm.get('email')?.hasError('email')">
+                *Enter valid Email
+              </span>
+              <span class="text-danger" *ngIf="empForm.get('email')?.touched && empForm.get('email')?.hasError('email')">
+                *Enter valid Email
+              </span>
+
+
+              <!--
+
+              <span *ngIf="email!.invalid && (email!.dirty || email!.touched)" class="alert alert-danger"></span>
+
+              <div *ngIf="email!.errors?.['required']">
+                Email is required.
+              </div> -->
+
+              </div>
+
+
+
+              <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+              <!-- <span class="text-danger" *ngIf="empForm.get('password')?.touched && empForm.get('password')?.hasError('required')">
+                *Enter Password
+              </span> -->
+              <span class="text-danger" *ngIf="empForm.get('password')?.touched && empForm.get('password')?.hasError('minlength')">
+                *Password must be 3 characters
+              </span>
+
+
+            </div>
+            <div class="mb-3">
+            <select formControlName="country" class="form-select" aria-label="Default select example">
+              <option selected>Select Country</option>
+              <option value="india">India</option>
+              <option value="usa">USA</option>
+              <option value="uk">UK</option>
+            </select>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="male" value="male" formControlName="gender">
+                <label class="form-check-label" for="exampleRadios1">
+                 Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="female" value="female" formControlName="gender">
+                <label class="form-check-label" for="exampleRadios2">
+                 Female
+                </label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="hobbies" class="form-label">Hobbies</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="sports">
+                <label class="form-check-label" for="inlineCheckbox1">Sports</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="music">
+                <label class="form-check-label" for="inlineCheckbox2">Music</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="dance" formControlName="hobbies">
+                <label class="form-check-label" for="inlineCheckbox3">Dance</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+        </div>
+    </div>
+</div>
